@@ -10,6 +10,8 @@ package vehiculos;
  * @author Carlos Lopez
  */
 public class Moto extends Vehiculo{
+
+    public int ano;
     @Override
     public String acelerar(){
         return "Moto acelerando";

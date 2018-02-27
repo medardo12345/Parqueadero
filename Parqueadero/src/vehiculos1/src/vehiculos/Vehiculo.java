@@ -11,8 +11,8 @@ package vehiculos;
  */
 public class Vehiculo {
     public String marca;
-    private int cilindraje;
-    private String modelo;
+    public int cilindraje;
+    public String modelo;
     private int año;
     
     public String acelerar(){

@@ -12,9 +12,10 @@ import parqueadero.fichaVehiculo;
  * @author Carlos Lopez
  */
 public class Principal {
+    public static void Acelerar(){
     
     public static void main(String[] args){
-        Camion cam = new Camion();
+        Camion miCamion = new Camion();
         Moto miMoto =  new Moto();
         
         System.out.println(Moto.acelerar());

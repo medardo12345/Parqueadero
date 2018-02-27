@@ -5,6 +5,7 @@
  */
 package parqueadero;
 
+import javax.swing.JOptionPane;
 import vehiculos.Moto;
 
 /**
@@ -19,13 +20,15 @@ public class fichaVehiculo extends javax.swing.JFrame {
     Moto miMoto=new Moto();
     
     
+    
 
     /**
      * Creates new form fichaVehiculo
      */
     public fichaVehiculo() {
-        for (int i=0;i,50;i++){
+        for (int i=0;i<50;i++){
         misMotos [i]=new Moto();
+        
     }
         initComponents();
     }
@@ -47,13 +50,11 @@ public class fichaVehiculo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         textoModelo = new javax.swing.JTextField();
-        texrtoAno = new javax.swing.JTextField();
+        textoAno = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("MARCA");
-
-        textoMarca.setText("kl");
 
         botonguardar.setText("guardar");
         botonguardar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,6 +80,12 @@ public class fichaVehiculo extends javax.swing.JFrame {
             }
         });
 
+        textoAno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoAnoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,7 +107,7 @@ public class fichaVehiculo extends javax.swing.JFrame {
                             .addComponent(textoMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                             .addComponent(textoCilindraje)
                             .addComponent(textoModelo)
-                            .addComponent(texrtoAno))))
+                            .addComponent(textoAno))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -121,7 +128,7 @@ public class fichaVehiculo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(texrtoAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(botonguardar)
                 .addGap(41, 41, 41))
@@ -132,8 +139,11 @@ public class fichaVehiculo extends javax.swing.JFrame {
 
     private void botonguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonguardarMouseClicked
 miMoto.marca=textoMarca.getText();  
-miMoto.modelo=textoModelo.getText();// TODO add your handling code here:
-JoptionPane.showMessageDialog()
+miMoto.modelo=textoModelo.getText();
+        String string = null;
+miMoto.ano=Integer.parseInt(textoAno.getText());
+miMoto.cilindraje=Integer.parseInt(textoCilindraje.getText());// TODO add your handling code here:
+JOptionPane.showMessageDialog (null, "hola");
     }//GEN-LAST:event_botonguardarMouseClicked
 
     private void textoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoModeloActionPerformed
@@ -143,6 +153,10 @@ JoptionPane.showMessageDialog()
     private void botonguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonguardarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonguardarActionPerformed
+
+    private void textoAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoAnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoAnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,10 +186,8 @@ JoptionPane.showMessageDialog()
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new fichaVehiculo().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new fichaVehiculo().setVisible(true);
         });
     }
 
@@ -185,7 +197,7 @@ JoptionPane.showMessageDialog()
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField texrtoAno;
+    private javax.swing.JTextField textoAno;
     private javax.swing.JTextField textoCilindraje;
     private javax.swing.JTextField textoMarca;
     private javax.swing.JTextField textoModelo;
